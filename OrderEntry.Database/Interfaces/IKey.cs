@@ -1,6 +1,6 @@
 namespace OrderEntry.Database.Entities;
 
-public class IKey
+public interface IKey
 {
-    
+    Guid Id { get; set; }
 }

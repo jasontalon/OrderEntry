@@ -5,7 +5,7 @@ public static class DotEnv
     public static void TryLoad()
     {
         var dotenv = string.Empty;
-        var maxAttempt = 4; 
+        var maxAttempt = 4;
         var attempts = 0;
         do
         {
@@ -26,6 +26,7 @@ public static class DotEnv
             .Split("\n")
             .Where(e => !string.IsNullOrEmpty(e))
             .Where(e => !e.StartsWith("#"))
+            .Where(e => !e.StartsWith("/"))
             .ToList();
 
         var environmentVariables = variables.ToDictionary(
@@ -36,7 +37,7 @@ public static class DotEnv
                 if (value.StartsWith("\"") && value.EndsWith("\""))
                     return value.Remove(0, 1)
                         .Remove(value.LastIndexOf("\"", StringComparison.Ordinal) - 1,
-                            1); //.Substring(value.LastIndexOf("\""));
+                            1);
                 return value;
             });
 

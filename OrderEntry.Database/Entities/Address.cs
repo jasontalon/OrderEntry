@@ -1,6 +1,6 @@
-namespace OrderEntry.Data;
+namespace OrderEntry.Database.Entities;
 
-public class Address : IAuditable
+public class Address : IKey, IAuditable
 {
     public Guid Id { get; set; }
     public string? ContactName { get; set; }

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using OrderEntry.Database;
 using OrderEntry.Infrastructure;
 
 namespace OrderEntry.Data;

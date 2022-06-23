@@ -1,4 +1,4 @@
-namespace OrderEntry.Data;
+namespace OrderEntry.Database.Entities;
 
 public class CustomerAddress
 {

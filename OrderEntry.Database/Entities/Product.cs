@@ -1,6 +1,6 @@
-namespace OrderEntry.Data;
+namespace OrderEntry.Database.Entities;
 
-public class Product : ILookup
+public class Product : IKey, ILookup
 {
     public Guid Id { get; set; }
     public string Name { get; set; }

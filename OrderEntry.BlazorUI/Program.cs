@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using OrderEntry.Database;
 using OrderEntry.Infrastructure;
 
 DotEnv.TryLoad();
@@ -7,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddEnvironmentVariables();
 
 // Add services to the container.
+builder.Services.AddDatabase(builder.Configuration);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
@@ -28,5 +31,12 @@ app.UseRouting();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetService<AppDbContext>();
+
+    dbContext?.Database.Migrate();
+}
 
 app.Run();

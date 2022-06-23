@@ -1,6 +1,6 @@
-namespace OrderEntry.Data;
+namespace OrderEntry.Database.Entities;
 
-public class ShipMethod : ILookup
+public class ShipMethod : IKey, ILookup
 {
     public Guid Id { get; set; }
     public string Name { get; set; }

@@ -1,10 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>OrderEntry.BlazorUI</RootNamespace>
+        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
@@ -17,7 +16,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\OrderEntry.Database\OrderEntry.Database.csproj" />
       <ProjectReference Include="..\OrderEntry.Infrastructure\OrderEntry.Infrastructure.csproj" />
     </ItemGroup>
 </Project>
